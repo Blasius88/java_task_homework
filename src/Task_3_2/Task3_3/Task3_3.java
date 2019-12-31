@@ -21,17 +21,29 @@ public class Task3_3 {
             }
         }
         int amount = 0;
-        if (maxPosit < minPosit) {
-
+        if (maxPosit+1 == minPosit || maxPosit == minPosit+1)
+        {
+            System.out.println("Между мин и макс элементами нет значений");
         }
-
-        
+        else if (maxPosit < minPosit) {
+            amount = Amount(arr, maxPosit, minPosit);
+        }
+        else if (maxPosit > minPosit)
+        {
+            amount = Amount(arr, minPosit, maxPosit);
+        }
+        if (amount != 0)
+        {
+            System.out.println("Сумма =" + amount);
+        }
     }
 
 
-    static int Amount (int [] arr, int a, int b)
-    {
+    static int Amount(int[] arr, int a, int b) {
         int amount = 0;
-
+        for (int i = a + 1; i < b; i++) {
+            amount += arr[i];
+        }
+        return amount;
     }
 }
