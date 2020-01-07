@@ -36,6 +36,7 @@ public class Hero implements isAlive {
     }
 
     public int getDamage() {
+
         return damage;
     }
 
